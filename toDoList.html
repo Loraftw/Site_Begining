@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first Webpage</title>
+    <form>
+        
+    </form>
+    <script>
+
+        var form = document.querySelector('form');
+        var todoList = document.querySelector('ul');
+        var button = document.querySelector('button');
+        var input = document.getElementById('user-todo');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            todoMaker(input.value);
+            input.value = '';
+        });
+
+        var todoMaker = function(text) {
+            var todo = document.createElement('li');
+            todo.textContent = text;
+            todoList.appendChiled(todo);
+        }
+
+        button.addEventListener('click', function() {
+            while (todoList.firstChild) {
+                todoList.removeChild(todoList.firstChild);
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1 id = 'title'> Welcome to the web page of a fatone!</h1>
+    <a id="navigation" href="toDoList.html">Home</a>
+    <h2>List item 1</h2>
+    <h3>List item 2</h3>
+</body>
+</html>
